@@ -728,6 +728,35 @@ left: 100%;
 margin-right: 8px;
 }
 
+/* Audio Control */
+.audio-control {
+position: absolute;
+bottom: 15px;
+right: 15px;
+z-index: 10;
+background: rgba(255, 255, 255, 0.2);
+backdrop-filter: blur(5px);
+border-radius: 50%;
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+border: 1px solid rgba(255, 255, 255, 0.3);
+transition: all 0.3s ease;
+}
+
+.audio-control:hover {
+background: rgba(255, 255, 255, 0.3);
+transform: scale(1.1);
+}
+
+.audio-control i {
+color: white;
+font-size: 1.2rem;
+}
+
 /* Animations */
 @keyframes float {
 0% {
@@ -1027,6 +1056,14 @@ animation: click-particle-animation 1s ease-out forwards;
 <div class="particles" id="particles"></div>
 <div class="click-particles" id="clickParticles"></div>
 
+<!-- Audio element for Takbiran -->
+<audio id="takbiranAudio" preload="auto" loop>
+    <source src="https://drive.google.com/uc?export=download&id=1Ow8PqUh0T9nBG-N7JJxYk8lYn7xWOCbk" type="audio/mpeg">
+    <!-- Fallback URL if the Google Drive link doesn't work -->
+    <source src="https://ia800504.us.archive.org/24/items/TakbiranIedulFitri/Takbiran%20Iedul%20Fitri.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
 <div class="container">
 <div class="greeting-card" id="greetingCard">
 <!-- Front of the Card -->
@@ -1109,6 +1146,11 @@ animation: click-particle-animation 1s ease-out forwards;
             </button>
         </div>
     </div>
+    
+    <!-- Audio control button -->
+    <div class="audio-control" id="audioControl">
+        <i class="lucide lucide-volume-2" id="audioIcon"></i>
+    </div>
 </div>
 </div>
 </div>
@@ -1122,6 +1164,13 @@ const btnShare = document.getElementById('btnShare');
 const confettiContainer = document.getElementById('confettiContainer');
 const particlesContainer = document.getElementById('particles');
 const clickParticles = document.getElementById('clickParticles');
+const takbiranAudio = document.getElementById('takbiranAudio');
+const audioControl = document.getElementById('audioControl');
+const audioIcon = document.getElementById('audioIcon');
+
+// Set initial audio state
+let isAudioPlaying = false;
+takbiranAudio.volume = 0.7; // Set initial volume to 70%
 
 // Create rising particles
 for (let i = 0; i < 30; i++) {
@@ -1160,11 +1209,49 @@ btnOpen.addEventListener('click', function(e) {
         greetingCard.classList.add('card-flipped');
         createConfetti();
         
+        // Play Takbiran audio when card is flipped
+        playTakbiranAudio();
+        
         // Remove pulse class after animation completes
         setTimeout(() => {
             btnOpen.classList.remove('btn-pulse');
         }, 500);
     }, 600);
+});
+
+function playTakbiranAudio() {
+    // Try to play the audio
+    const playPromise = takbiranAudio.play();
+    
+    // Handle potential play() promise rejection
+    if (playPromise !== undefined) {
+        playPromise.then(() => {
+            // Playback started successfully
+            isAudioPlaying = true;
+            audioIcon.className = 'lucide lucide-volume-2';
+        }).catch(error => {
+            // Auto-play was prevented
+            console.log("Audio playback was prevented by the browser:", error);
+            isAudioPlaying = false;
+            audioIcon.className = 'lucide lucide-volume-x';
+        });
+    }
+}
+
+// Toggle audio on/off when audio control is clicked
+audioControl.addEventListener('click', function() {
+    if (isAudioPlaying) {
+        takbiranAudio.pause();
+        isAudioPlaying = false;
+        audioIcon.className = 'lucide lucide-volume-x';
+    } else {
+        takbiranAudio.play().then(() => {
+            isAudioPlaying = true;
+            audioIcon.className = 'lucide lucide-volume-2';
+        }).catch(error => {
+            console.log("Audio playback was prevented:", error);
+        });
+    }
 });
 
 function createClickParticles(e) {
@@ -1206,6 +1293,11 @@ function createClickParticles(e) {
 
 btnClose.addEventListener('click', function() {
     greetingCard.classList.remove('card-flipped');
+    
+    // Pause the audio when returning to front of card
+    takbiranAudio.pause();
+    isAudioPlaying = false;
+    audioIcon.className = 'lucide lucide-volume-x';
 });
 
 btnShare.addEventListener('click', function() {
@@ -1331,6 +1423,22 @@ window.addEventListener('resize', function() {
         document.querySelector('.greeting-card').style.removeProperty('height');
     }
 });
+
+// Handle audio autoplay issues on mobile
+document.addEventListener('touchstart', function() {
+    // Create a silent audio context to unlock audio on iOS
+    if (typeof AudioContext !== 'undefined' || typeof webkitAudioContext !== 'undefined') {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const audioContext = new AudioContext();
+        
+        // Create and play a silent sound
+        const silentBuffer = audioContext.createBuffer(1, 1, 22050);
+        const source = audioContext.createBufferSource();
+        source.buffer = silentBuffer;
+        source.connect(audioContext.destination);
+        source.start();
+    }
+}, { once: true });
 
 // Trigger resize once on load
 window.dispatchEvent(new Event('resize'));
