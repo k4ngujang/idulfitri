@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selamat Hari Raya Idul Fitri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
+<style>
+:root {
+--primary-color: #0d47a1;
+--secondary-color: #1a237e;
+--accent-color: #FFA000; /* Changed to dark yellow/amber */
+--accent-hover: #FFB300; /* Changed to lighter amber for hover */
+--light-color: #f8f9fa;
+--dark-color: #212529;
+--transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+--whatsapp-color: #25D366;
+--gradient-bg: linear-gradient(135deg, #0d47a1 0%, #1a237e 100%);
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Raleway', sans-serif;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+background: var(--gradient-bg);
+overflow-x: hidden;
+color: var(--light-color);
+position: relative;
+}
+
+body::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+pointer-events: none;
+}
+
+.container {
+width: 100%;
+max-width: 420px;
+margin: 0 auto;
+position: relative;
+perspective: 2000px;
+}
+
+.greeting-card {
+width: 100%;
+height: 600px;
+position: relative;
+transform-style: preserve-3d;
+transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-side {
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.card-front {
+background: rgba(0, 0, 0, 0.2);
+backdrop-filter: blur(10px);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 30px;
+border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-back {
+background: #fff;
+transform: rotateY(180deg);
+padding: 30px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+color: var(--dark-color);
+border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-flipped {
+transform: rotateY(180deg);
+}
+
+/* Decorative Elements */
+.decoration-container {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+pointer-events: none;
+}
+
+.lantern {
+position: absolute;
+width: 40px;
+height: 60px;
+background: linear-gradient(to bottom, rgba(144, 202, 249, 0.8), rgba(100, 181, 246, 0.6));
+border-radius: 50% 50% 10% 10% / 60% 60% 40% 40%;
+box-shadow: 0 0 20px rgba(100, 181, 246, 0.5);
+animation: sway 6s ease-in-out infinite;
+z-index: 1;
+}
+
+.lantern::before {
+content: '';
+position: absolute;
+top: -8px;
+left: 50%;
+transform: translateX(-50%);
+width: 10px;
+height: 10px;
+background: rgba(255, 255, 255, 0.9);
+border-radius: 50%;
+}
+
+.lantern::after {
+content: '';
+position: absolute;
+bottom: -5px;
+left: 50%;
+transform: translateX(-50%);
+width: 30px;
+height: 5px;
+background: rgba(144, 202, 249, 0.9);
+border-radius: 5px;
+}
+
+.lantern:nth-child(1) {
+top: 10%;
+left: 15%;
+animation-delay: 0s;
+}
+
+.lantern:nth-child(2) {
+top: 5%;
+right: 15%;
+animation-delay: 1s;
+}
+
+.lantern:nth-child(3) {
+bottom: 15%;
+left: 10%;
+animation-delay: 0.5s;
+}
+
+.lantern:nth-child(4) {
+bottom: 20%;
+right: 10%;
+animation-delay: 1.5s;
+}
+
+.mosque-dome {
+position: absolute;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+width: 300px;
+height: 150px;
+z-index: 0;
+}
+
+.dome {
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 120px;
+height: 60px;
+background: rgba(144, 202, 249, 0.2);
+border-radius: 100% 100% 0 0;
+box-shadow: 0 0 20px rgba(144, 202, 249, 0.2);
+}
+
+.dome::before {
+content: '';
+position: absolute;
+top: -15px;
+left: 50%;
+transform: translateX(-50%);
+width: 15px;
+height: 15px;
+background: rgba(144, 202, 249, 0.6);
+border-radius: 50%;
+}
+
+.minaret {
+position: absolute;
+bottom: 0;
+width: 15px;
+height: 80px;
+background: rgba(144, 202, 249, 0.2);
+border-radius: 5px 5px 0 0;
+}
+
+.minaret::before {
+content: '';
+position: absolute;
+top: -10px;
+left: 50%;
+transform: translateX(-50%);
+width: 10px;
+height: 10px;
+background: rgba(144, 202, 249, 0.6);
+border-radius: 50%;
+}
+
+.minaret:nth-child(1) {
+left: 30px;
+height: 70px;
+}
+
+.minaret:nth-child(2) {
+left: 70px;
+height: 60px;
+}
+
+.minaret:nth-child(3) {
+right: 70px;
+height: 60px;
+}
+
+.minaret:nth-child(4) {
+right: 30px;
+height: 70px;
+}
+
+/* Islamic Pattern Decoration - Replacing the Moon */
+.islamic-pattern {
+position: absolute;
+top: 40px;
+left: 50%;
+transform: translateX(-50%);
+width: 120px;
+height: 120px;
+z-index: 2;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.pattern-container {
+width: 100%;
+height: 100%;
+position: relative;
+animation: rotate 20s linear infinite;
+}
+
+.pattern-element {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.pattern-circle {
+position: absolute;
+border: 2px solid rgba(144, 202, 249, 0.8);
+border-radius: 50%;
+}
+
+.pattern-circle:nth-child(1) {
+width: 100%;
+height: 100%;
+animation: pulse 3s infinite alternate;
+}
+
+.pattern-circle:nth-child(2) {
+width: 80%;
+height: 80%;
+animation: pulse 3s infinite alternate-reverse;
+}
+
+.pattern-circle:nth-child(3) {
+width: 60%;
+height: 60%;
+animation: pulse 3s infinite alternate;
+}
+
+.pattern-star {
+position: absolute;
+width: 100%;
+height: 100%;
+}
+
+.pattern-star::before,
+.pattern-star::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: transparent;
+border: 2px solid rgba(144, 202, 249, 0.6);
+}
+
+.pattern-star::before {
+clip-path: polygon(50% 0%, 50% 100%, 0% 50%);
+}
+
+.pattern-star::after {
+clip-path: polygon(50% 0%, 50% 100%, 100% 50%);
+}
+
+.pattern-overlay {
+position: absolute;
+width: 100%;
+height: 100%;
+background: radial-gradient(circle, rgba(144, 202, 249, 0.3) 0%, transparent 70%);
+animation: glow 4s infinite alternate;
+}
+
+.arabic-calligraphy {
+position: absolute;
+font-family: 'Scheherazade New', serif;
+font-size: 1.8rem;
+font-weight: 700;
+color: rgba(255, 255, 255, 0.9);
+text-align: center;
+z-index: 10;
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-shadow: 0 0 10px rgba(100, 181, 246, 0.8);
+animation: glow-text 3s infinite alternate;
+/* This element is now positioned outside the rotating container */
+}
+
+@keyframes glow-text {
+0% {
+    text-shadow: 0 0 5px rgba(100, 181, 246, 0.8);
+    opacity: 0.8;
+}
+100% {
+    text-shadow: 0 0 15px rgba(100, 181, 246, 1), 0 0 20px rgba(144, 202, 249, 0.8);
+    opacity: 1;
+}
+}
+
+.star {
+position: absolute;
+background: rgba(255, 255, 255, 0.9);
+clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+animation: twinkle 3s infinite alternate;
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.star:nth-child(1) {
+top: -10px;
+left: 50%;
+transform: translateX(-50%);
+width: 20px;
+height: 20px;
+animation-delay: 0.5s;
+}
+
+.star:nth-child(2) {
+top: 20px;
+right: -10px;
+width: 15px;
+height: 15px;
+animation-delay: 1s;
+}
+
+.star:nth-child(3) {
+bottom: 10px;
+left: -10px;
+width: 12px;
+height: 12px;
+animation-delay: 1.5s;
+}
+
+.star:nth-child(4) {
+bottom: 20px;
+right: 10px;
+width: 18px;
+height: 18px;
+animation-delay: 0.7s;
+}
+
+/* Front Card Content */
+.front-content {
+text-align: center;
+z-index: 3;
+background: rgba(0, 0, 0, 0.4);
+backdrop-filter: blur(10px);
+padding: 30px;
+border-radius: 20px;
+border: 1px solid rgba(255, 255, 255, 0.1);
+width: 100%;
+max-width: 340px;
+margin-top: 80px;
+transform: translateY(0);
+animation: float 6s ease-in-out infinite;
+}
+
+.front-title {
+font-size: 2.2rem;
+font-weight: 700;
+margin-bottom: 10px;
+background: linear-gradient(to right, #ffffff, #90caf9);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.front-subtitle {
+font-size: 1.6rem;
+font-weight: 600;
+margin-bottom: 15px;
+color: var(--accent-color);
+}
+
+.arabic-date {
+font-family: 'Raleway', sans-serif; /* Changed to Raleway for Indonesian numerals */
+font-size: 1.8rem;
+margin: 15px 0;
+color: var(--light-color);
+}
+
+.btn-open {
+background: var(--accent-color);
+color: var(--dark-color);
+border: none;
+padding: 15px 30px;
+border-radius: 50px;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: var(--transition);
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 20px auto 0;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+position: relative;
+overflow: hidden;
+}
+
+.btn-open::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+transition: 0.5s;
+}
+
+.btn-open:hover {
+background: var(--accent-hover);
+transform: translateY(-5px);
+box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-open:hover::before {
+left: 100%;
+}
+
+.btn-open i {
+margin-right: 10px;
+font-size: 1.2rem;
+}
+
+/* Button Click Effect */
+.btn-pulse {
+animation: button-pulse 0.5s ease-out;
+}
+
+@keyframes button-pulse {
+0% {
+    box-shadow: 0 0 0 0 rgba(255, 160, 0, 0.7); /* Updated to match new button color */
+    transform: scale(1);
+}
+50% {
+    box-shadow: 0 0 0 20px rgba(255, 160, 0, 0); /* Updated to match new button color */
+    transform: scale(1.05);
+}
+100% {
+    box-shadow: 0 0 0 0 rgba(255, 160, 0, 0); /* Updated to match new button color */
+    transform: scale(1);
+}
+}
+
+/* Back Card Content */
+.back-header {
+text-align: center;
+margin-bottom: 20px;
+width: 100%;
+}
+
+.back-title {
+color: var(--primary-color);
+font-size: 1.8rem;
+font-weight: 700;
+margin-bottom: 10px;
+}
+
+.divider {
+width: 80px;
+height: 4px;
+background: linear-gradient(to right, #0d47a1, #64b5f6);
+margin: 15px auto;
+border-radius: 2px;
+}
+
+.greeting-content {
+text-align: center;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 100%;
+}
+
+.arabic-greeting {
+font-family: 'Scheherazade New', serif;
+font-size: 1.8rem;
+color: var(--primary-color);
+margin-bottom: 20px;
+direction: rtl;
+}
+
+.greeting-text {
+color: var(--dark-color);
+font-size: 1rem;
+line-height: 1.6;
+margin-bottom: 20px;
+}
+
+.back-footer {
+width: 100%;
+text-align: center;
+margin-top: 30px;
+padding-top: 30px;
+border-top: 1px solid #eee;
+padding-bottom: 20px;
+}
+
+.footer-text {
+font-size: 1rem;
+color: #6c757d;
+margin-bottom: 20px;
+font-weight: 500;
+}
+
+.button-group {
+display: flex;
+gap: 15px;
+margin-top: 20px;
+justify-content: center;
+}
+
+.btn-close {
+background: linear-gradient(135deg, #0d47a1 0%, #1a237e 100%);
+color: white;
+border: none;
+padding: 12px 25px;
+border-radius: 50px;
+font-size: 0.9rem;
+font-weight: 500;
+cursor: pointer;
+transition: var(--transition);
+display: flex;
+align-items: center;
+justify-content: center;
+flex: 1;
+max-width: 160px;
+position: relative;
+overflow: hidden;
+}
+
+.btn-close::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+transition: 0.5s;
+}
+
+.btn-close:hover {
+transform: translateY(-3px);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-close:hover::before {
+left: 100%;
+}
+
+.btn-share {
+background: var(--whatsapp-color);
+color: white;
+border: none;
+padding: 12px 25px;
+border-radius: 50px;
+font-size: 0.9rem;
+font-weight: 500;
+cursor: pointer;
+transition: var(--transition);
+display: flex;
+align-items: center;
+justify-content: center;
+flex: 1;
+max-width: 160px;
+position: relative;
+overflow: hidden;
+}
+
+.btn-share::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+transition: 0.5s;
+}
+
+.btn-share:hover {
+transform: translateY(-3px);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-share:hover::before {
+left: 100%;
+}
+
+.btn-close i, .btn-share i {
+margin-right: 8px;
+}
+
+/* Animations */
+@keyframes float {
+0% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-15px);
+}
+100% {
+    transform: translateY(0);
+}
+}
+
+@keyframes sway {
+0% {
+    transform: translateY(0) rotate(0deg);
+}
+50% {
+    transform: translateY(-10px) rotate(5deg);
+}
+100% {
+    transform: translateY(0) rotate(0deg);
+}
+}
+
+@keyframes twinkle {
+0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+}
+100% {
+    opacity: 0.9;
+    transform: scale(1);
+}
+}
+
+@keyframes glow {
+0% {
+    box-shadow: 0 0 20px rgba(144, 202, 249, 0.6);
+    opacity: 0.7;
+}
+100% {
+    box-shadow: 0 0 40px rgba(144, 202, 249, 0.9);
+    opacity: 1;
+}
+}
+
+@keyframes pulse {
+0% {
+    transform: scale(1);
+    opacity: 0.7;
+}
+100% {
+    transform: scale(1.1);
+    opacity: 1;
+}
+}
+
+@keyframes rotate {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+
+.confetti-container {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: 9999;
+}
+
+/* Particle Effects */
+.particles {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+pointer-events: none;
+}
+
+.particle {
+position: absolute;
+width: 5px;
+height: 5px;
+background: rgba(144, 202, 249, 0.5);
+border-radius: 50%;
+animation: rise 15s linear infinite;
+}
+
+@keyframes rise {
+0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+}
+20% {
+    opacity: 1;
+}
+80% {
+    opacity: 1;
+}
+100% {
+    transform: translateY(-100vh) scale(1);
+    opacity: 0;
+}
+}
+
+/* Button Click Particles */
+.click-particles {
+position: absolute;
+pointer-events: none;
+z-index: 9999;
+}
+
+.click-particle {
+position: absolute;
+background: var(--accent-color);
+border-radius: 50%;
+animation: click-particle-animation 1s ease-out forwards;
+}
+
+@keyframes click-particle-animation {
+0% {
+    opacity: 1;
+    transform: scale(0);
+}
+100% {
+    opacity: 0;
+    transform: scale(1);
+}
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+.greeting-card {
+    height: 600px;
+}
+
+.front-content, .card-back {
+    padding: 35px;
+}
+}
+
+@media (max-width: 767px) {
+.greeting-card {
+    height: 550px;
+}
+
+.front-title {
+    font-size: 1.8rem;
+}
+
+.front-subtitle {
+    font-size: 1.4rem;
+}
+
+.arabic-date, .arabic-greeting {
+    font-size: 1.5rem;
+}
+
+.btn-open {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+}
+
+.back-title {
+    font-size: 1.5rem;
+}
+
+.greeting-text {
+    font-size: 0.9rem;
+}
+
+.mosque-dome {
+    width: 250px;
+}
+
+.dome {
+    width: 100px;
+}
+
+.minaret:nth-child(1) {
+    left: 20px;
+}
+
+.minaret:nth-child(2) {
+    left: 60px;
+}
+
+.minaret:nth-child(3) {
+    right: 60px;
+}
+
+.minaret:nth-child(4) {
+    right: 20px;
+}
+
+.arabic-calligraphy {
+    font-size: 1.5rem;
+}
+}
+
+@media (max-width: 480px) {
+.greeting-card {
+    height: 520px;
+}
+
+.front-content, .card-back {
+    padding: 20px;
+}
+
+.front-title {
+    font-size: 1.6rem;
+}
+
+.front-subtitle {
+    font-size: 1.2rem;
+}
+
+.arabic-date, .arabic-greeting {
+    font-size: 1.3rem;
+}
+
+.islamic-pattern {
+    width: 100px;
+    height: 100px;
+}
+
+.arabic-calligraphy {
+    font-size: 1.2rem;
+}
+
+.button-group {
+    width: 100%;
+    gap: 10px;
+}
+
+.btn-close, .btn-share {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+}
+
+.back-footer {
+    padding-bottom: 15px;
+}
+
+.mosque-dome {
+    width: 200px;
+}
+
+.dome {
+    width: 80px;
+}
+}
+
+/* Fix for Safari and iOS */
+@supports (-webkit-touch-callout: none) {
+.greeting-card {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.card-side {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.card-flipped {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+}
+</style>
+</head>
+<body>
+<div class="confetti-container" id="confettiContainer"></div>
+<div class="particles" id="particles"></div>
+<div class="click-particles" id="clickParticles"></div>
+
+<div class="container">
+<div class="greeting-card" id="greetingCard">
+<!-- Front of the Card -->
+<div class="card-side card-front">
+    <div class="islamic-pattern">
+        <div class="pattern-container">
+            <div class="pattern-element">
+                <div class="pattern-circle"></div>
+                <div class="pattern-circle"></div>
+                <div class="pattern-circle"></div>
+                <div class="pattern-star"></div>
+                <div class="pattern-overlay"></div>
+            </div>
+        </div>
+        <!-- Arabic text moved outside the rotating container -->
+        <div class="arabic-calligraphy">عيد الفطر</div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+    
+    <div class="decoration-container">
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+    </div>
+    
+    <div class="mosque-dome">
+        <div class="dome"></div>
+        <div class="minaret"></div>
+        <div class="minaret"></div>
+        <div class="minaret"></div>
+        <div class="minaret"></div>
+    </div>
+    
+    <div class="front-content">
+        <h1 class="front-title">Selamat Hari Raya</h1>
+        <h2 class="front-subtitle">Idul Fitri</h2>
+        <div class="arabic-date">1446 H / 2025 M</div>
+        
+        <button class="btn-open" id="btnOpen">
+            <i class="lucide lucide-gift"></i>
+            Buka Kartu Ucapan
+        </button>
+    </div>
+</div>
+
+<!-- Back of the Card -->
+<div class="card-side card-back">
+    <div class="back-header">
+        <h2 class="back-title">Selamat Hari Raya Idul Fitri</h2>
+        <div class="divider"></div>
+    </div>
+    
+    <div class="greeting-content">
+        <div class="arabic-greeting">تَقَبَّلَ اللهُ مِنَّا وَمِنْكُمْ</div>
+        
+        <p class="greeting-text">Semoga Allah menerima amal ibadah kita. Mohon maaf lahir dan batin atas segala khilaf dan salah.</p>
+        
+        <p class="greeting-text">Semoga kita dipertemukan kembali di Ramadhan mendatang dalam keadaan sehat wal'afiat.</p>
+    </div>
+    
+    <div class="back-footer">
+        <p class="footer-text">Minal Aidin Wal Faizin</p>
+        <div class="button-group">
+            <button class="btn-close" id="btnClose">
+                <i class="lucide lucide-rotate-ccw"></i>
+                Kembali
+            </button>
+            <button class="btn-share" id="btnShare">
+                <i class="lucide lucide-share-2"></i>
+                Bagikan
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const greetingCard = document.getElementById('greetingCard');
+const btnOpen = document.getElementById('btnOpen');
+const btnClose = document.getElementById('btnClose');
+const btnShare = document.getElementById('btnShare');
+const confettiContainer = document.getElementById('confettiContainer');
+const particlesContainer = document.getElementById('particles');
+const clickParticles = document.getElementById('clickParticles');
+
+// Create rising particles
+for (let i = 0; i < 30; i++) {
+    createParticle();
+}
+
+function createParticle() {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    
+    // Random position, size and delay
+    const size = Math.random() * 4 + 2;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.animationDelay = `${Math.random() * 15}s`;
+    
+    particlesContainer.appendChild(particle);
+    
+    // Remove and recreate particle when animation ends
+    particle.addEventListener('animationend', function() {
+        particle.remove();
+        createParticle();
+    });
+}
+
+btnOpen.addEventListener('click', function(e) {
+    // Add pulse effect to button
+    btnOpen.classList.add('btn-pulse');
+    
+    // Create click particles
+    createClickParticles(e);
+    
+    // Add a slight delay before flipping the card
+    setTimeout(() => {
+        greetingCard.classList.add('card-flipped');
+        createConfetti();
+        
+        // Remove pulse class after animation completes
+        setTimeout(() => {
+            btnOpen.classList.remove('btn-pulse');
+        }, 500);
+    }, 600);
+});
+
+function createClickParticles(e) {
+    // Get button position
+    const rect = btnOpen.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    // Create particles
+    for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'click-particle';
+        
+        // Random size
+        const size = Math.random() * 10 + 5;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Random position around button
+        const angle = Math.random() * Math.PI * 2;
+        const distance = Math.random() * 100 + 50;
+        const x = centerX + Math.cos(angle) * distance;
+        const y = centerY + Math.sin(angle) * distance;
+        
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+        
+        // Random animation duration
+        particle.style.animationDuration = `${Math.random() * 0.5 + 0.5}s`;
+        
+        clickParticles.appendChild(particle);
+        
+        // Remove particle after animation
+        particle.addEventListener('animationend', function() {
+            particle.remove();
+        });
+    }
+}
+
+btnClose.addEventListener('click', function() {
+    greetingCard.classList.remove('card-flipped');
+});
+
+btnShare.addEventListener('click', function() {
+    shareViaWhatsApp();
+});
+
+function shareViaWhatsApp() {
+    const message = encodeURIComponent(
+        "Selamat Hari Raya Idul Fitri 1446 H\n\n" +
+        "تَقَبَّلَ اللهُ مِنَّا وَمِنْكُمْ\n\n" +
+        "Semoga Allah menerima amal ibadah kita. Mohon maaf lahir dan batin atas segala khilaf dan salah.\n\n" +
+        "Minal Aidin Wal Faizin"
+    );
+    
+    // Create WhatsApp share URL
+    const whatsappURL = `https://wa.me/?text=${message}`;
+    
+    // Open in new window/tab
+    window.open(whatsappURL, '_blank');
+}
+
+function createConfetti() {
+    const colors = [
+        '#64b5f6', '#0d47a1', '#ffffff', '#1a237e', 
+        '#2196f3', '#bbdefb', '#e3f2fd', '#90caf9'
+    ];
+    
+    const shapes = [
+        'circle', 'square', 'triangle', 'diamond', 'star'
+    ];
+    
+    confettiContainer.innerHTML = ''; // Clear previous confetti
+    
+    // Adjust number of confetti based on screen size
+    const confettiCount = window.innerWidth < 480 ? 80 : 150;
+    
+    for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.position = 'absolute';
+        confetti.style.zIndex = '9999';
+        
+        // Randomize confetti properties
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const size = Math.random() * 12 + 5;
+        const shape = shapes[Math.floor(Math.random() * shapes.length)];
+        
+        confetti.style.width = `${size}px`;
+        confetti.style.height = `${size}px`;
+        confetti.style.position = 'absolute';
+        confetti.style.backgroundColor = color;
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.top = '-20px';
+        
+        // Apply different shapes
+        if (shape === 'circle') {
+            confetti.style.borderRadius = '50%';
+        } else if (shape === 'triangle') {
+            confetti.style.width = '0';
+            confetti.style.height = '0';
+            confetti.style.backgroundColor = 'transparent';
+            confetti.style.borderLeft = `${size/2}px solid transparent`;
+            confetti.style.borderRight = `${size/2}px solid transparent`;
+            confetti.style.borderBottom = `${size}px solid ${color}`;
+        } else if (shape === 'diamond') {
+            confetti.style.transform = 'rotate(45deg)';
+        } else if (shape === 'star') {
+            confetti.style.backgroundColor = 'transparent';
+            confetti.style.width = `${size}px`;
+            confetti.style.height = `${size}px`;
+            confetti.style.position = 'relative';
+            confetti.style.clipPath = 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)';
+            confetti.style.background = color;
+        }
+        
+        confettiContainer.appendChild(confetti);
+        
+        // Create animation with random parameters
+        const duration = Math.random() * 3000 + 3000;
+        const delay = Math.random() * 1500;
+        const endY = window.innerHeight + 100;
+        const endX = (Math.random() - 0.5) * 500;
+        const endRotation = Math.random() * 720 - 360;
+        
+        // Use requestAnimationFrame for better performance
+        requestAnimationFrame(() => {
+            const animation = confetti.animate([
+                { 
+                    transform: `translate(0, 0) rotate(0)`, 
+                    opacity: 1 
+                },
+                { 
+                    transform: `translate(${endX}px, ${endY}px) rotate(${endRotation}deg)`, 
+                    opacity: 0 
+                }
+            ], {
+                duration: duration,
+                easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+                delay: delay
+            });
+            
+            animation.onfinish = function() {
+                confetti.remove();
+            };
+        });
+    }
+}
+
+// Fix for iOS Safari touch events
+if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+    document.addEventListener('touchmove', function(e) {
+        if (e.scale !== 1) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+}
+
+// Handle window resize for better responsiveness
+window.addEventListener('resize', function() {
+    // Adjust card height for very small screens
+    if (window.innerHeight < 600) {
+        document.querySelector('.greeting-card').style.height = '500px';
+    } else {
+        document.querySelector('.greeting-card').style.removeProperty('height');
+    }
+});
+
+// Trigger resize once on load
+window.dispatchEvent(new Event('resize'));
+});
+</script>
+</body>
+</html>
